@@ -5,7 +5,7 @@ Written by Hideo Otsuna (HHMI Janelia, Scientific Computing Software, Senior Sci
 <div align="right">
 <a href="https://www.janelia.org/"><img src="https://github.com/JaneliaSciComp/Slice_Aligner_OPC/blob/master/maual/jrc_logo_180x40.png" alt="Link to Janelia"></a></div><br>
 
-#**Manual**
+# **Manual**
 
 <br>
 
