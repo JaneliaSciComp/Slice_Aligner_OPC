@@ -1,6 +1,6 @@
 # Slice_Aligner_OPC
 This is a Fiji plugin for aligning the 2D + time sequences of bioimaging data.
-This plugin aligns all slices within a 3D stack to a single template slice. The template slice is needed to be chosen from a stack. 
+This plugin aligns all slices within a 3D stack to a single template slice. The template slice is needed to be chosen from a stack. <br<br>>
 Written by Hideo Otsuna (HHMI Janelia, Scientific Computing Software, Senior Scientist)
 
 <br><br>
