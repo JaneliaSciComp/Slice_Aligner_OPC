@@ -1,15 +1,11 @@
 # Slice_Aligner_OPC
 This is a Fiji plugin for aligning the 2D + time sequences of bioimaging data.
-
+This plugin aligns all slices within a 3D stack to a single template slice. The template slice is needed to be chosen from a stack. 
 Written by Hideo Otsuna (HHMI Janelia, Scientific Computing Software, Senior Scientist)
 
-Manual:
-https://github.com/JaneliaSciComp/Slice_Aligner_OPC/wiki
-
-# **Slice_Aligner_OPC manual**
-
-This plugin is for live-image (2D + Time) shift + rotation alignment. This plugin aligns all slices within a 3D stack to a single template slice. The template slice is needed to be chosen from a stack. 
- 
+<br><br>
+# **Manual**
+<br>
 
 <img src="https://github.com/JaneliaSciComp/Slice_Aligner_OPC/blob/master/maual/GUI.jpg" width="500" height="355" alt="GUI">
 <br>
