@@ -107,7 +107,7 @@ public class Slice_Aligner_OPC implements PlugInFilter
 		double RotIncri=(double)Prefs.get("RotIncri.double",0.2);
 		boolean thresholding=(boolean)Prefs.get("thresholding.boolean",false);
 		
-		GenericDialog gd = new GenericDialog("Samp Temp rotate and shift value by Image Correlation");
+		GenericDialog gd = new GenericDialog("Slice Aligner OPC");
 		
 		String tempimg [] = new String[3];
 		tempimg[0]="Current slice"; tempimg[1]="First slice"; tempimg[2]="input slice number";
