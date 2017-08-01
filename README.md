@@ -2,8 +2,6 @@
 This is a Fiji plugin for aligning the 2D + time sequences of bioimaging data.
 This plugin aligns all slices within a 3D stack to a single template slice. The template slice is needed to be chosen from a stack. <br><br>
 Written by Hideo Otsuna (HHMI Janelia, Scientific Computing Software, Senior Scientist)
-
-<br>
 <div align="right">
 <a href="https://www.janelia.org/"><img src="https://github.com/JaneliaSciComp/Slice_Aligner_OPC/blob/master/maual/jrc_logo_180x40.png" alt="Link to Janelia"></a></div>
 <br>
