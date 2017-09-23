@@ -104,7 +104,7 @@ public class Slice_Aligner_OPC implements PlugInFilter
 		BaseChannel=0;
 		
 		//CalM = (int)Prefs.get("CalM.int",0);
-	//	sampleDominant = (int)Prefs.get("sampleDominant.int",0);
+		//	sampleDominant = (int)Prefs.get("sampleDominant.int",0);
 		double RotIncri=(double)Prefs.get("RotIncri.double",0.2);
 		boolean thresholding=(boolean)Prefs.get("thresholding.boolean",false);
 		
@@ -136,8 +136,8 @@ public class Slice_Aligner_OPC implements PlugInFilter
 		//	String []	CalMST = {"Subtraction", "ABS gap", "OBJ peasonCoeff"};
 		//	gd.addRadioButtonGroup("Calculation method", CalMST, 0, 3, CalMST[CalM]);
 		
-	//	String []	CalMST2 = {"Equal weight (temp and sample)", "Sample dominant"};
-	//	gd.addRadioButtonGroup("Weight method", CalMST2, 0, 2, CalMST2[sampleDominant]);
+		//	String []	CalMST2 = {"Equal weight (temp and sample)", "Sample dominant"};
+		//	gd.addRadioButtonGroup("Weight method", CalMST2, 0, 2, CalMST2[sampleDominant]);
 		
 		gd.showDialog();
 		if(gd.wasCanceled()){
@@ -158,7 +158,7 @@ public class Slice_Aligner_OPC implements PlugInFilter
 		thresholding=(boolean)gd.getNextBoolean();
 		
 		//	BrightSelect=gd.getNextRadioButton();
-	//	String STdominant = (String)gd.getNextRadioButton();
+		//	String STdominant = (String)gd.getNextRadioButton();
 		
 		IJ.log("tempimgSelect; "+tempimgSelect);
 		if(tempimgSelect=="input slice number"){
@@ -197,12 +197,12 @@ public class Slice_Aligner_OPC implements PlugInFilter
 		Prefs.set("miRot.double",miRot);
 		Prefs.set("Overlap.double",Overlap);
 		
-	//	if(STdominant == "Equal weight (temp and sample)")
+		//	if(STdominant == "Equal weight (temp and sample)")
 		sampleDominant = 0;
-	//	else if(STdominant == "Sample dominant")
-	//	sampleDominant = 1;
+		//	else if(STdominant == "Sample dominant")
+		//	sampleDominant = 1;
 		
-	//	Prefs.set("sampleDominant.int", sampleDominant);
+		//	Prefs.set("sampleDominant.int", sampleDominant);
 		
 		
 		if(Overlap>100){
@@ -251,13 +251,15 @@ public class Slice_Aligner_OPC implements PlugInFilter
 					IJ.log("All channel mode "+nChannels+" channels");
 				}
 			}
-			
-			
 		}//if(nChannels!=1){
 		
-		ImagePlus[] channels = new ImagePlus[nChannels];
+			ImagePlus[] channels = new ImagePlus[nChannels];
+			
 		channels = splitChannels(isamp, nChannels);
+		
+		if(nChannels!=1)
 		isamp=channels[BaseChannel];
+
 		
 		if(thread_num_ <= 0) thread_num_ = 1;
 		Prefs.set("thread_num.int", thread_num_);
@@ -301,7 +303,7 @@ public class Slice_Aligner_OPC implements PlugInFilter
 		int widthSamp = isamp.getWidth();
 		int heightSamp = isamp.getHeight();
 		
-		if(AllCh=="Yes"){
+		if(AllCh=="Yes" && nChannels!=1){
 			IJ.log("Creating max ch...");
 			channels[2]=channels[0];
 			
@@ -333,7 +335,7 @@ public class Slice_Aligner_OPC implements PlugInFilter
 			}
 			isamp=channels[2];
 			IJ.log("Max ch creation done");
-		}
+		}//	if(AllCh=="Yes" && nChannels!=1){
 		
 		
 		
@@ -684,7 +686,7 @@ public class Slice_Aligner_OPC implements PlugInFilter
 				if(nChannels>1){
 					endchannel=2;
 					newimp2 = new ImagePlus(TitleName+"_shift_rotation_fixed.tif", dcStackfinal2);
-
+					
 					if(nChannels==3){
 						newimp3 = new ImagePlus(TitleName+"_shift_rotation_fixed.tif", dcStackfinal3);
 						endchannel=3;
@@ -717,6 +719,8 @@ public class Slice_Aligner_OPC implements PlugInFilter
 			newimp.setDimensions(nChannels,isampOri.getNSlices(),isampOri.getNFrames());
 			newimp.show();
 		}else{
+			
+			newimp1 = new ImagePlus(TitleName+"_shift_rotation_fixed.tif", dcStackfinal);
 			newimp1.setCalibration(isampOri.getCalibration());
 			newimp1.show();
 			
